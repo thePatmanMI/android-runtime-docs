@@ -32,7 +32,6 @@ var clickListener = android.view.View.OnClickListener({
 ```
 
 In these cases the Binding Generator will dynamically create a Java class with the desired implementation, enabling method override and interface implementation. The generation process is highly optimized and adds insignificant overhead upon application execution.
-[TODO]: Link to the more detailed page(s).
 
 ### Marshalling Service
 Being two different worlds JavaScript and Android use different types of data. For example the java.lang.String differs from the JavaScript String object; same goes for the different numeric types in Java and the Number primitive in JavaScript. The Marshalling service takes care of data conversion to and from Java/JavaScript calls. Imagine the following code:
@@ -45,3 +44,5 @@ var javaFile = new java.io.File(path);
 // Name is converted from java.lang.String to JavaScript string
 var name = javaFile.getName();
 ```
+
+[TODO]: Link to the more detailed page(s).
