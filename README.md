@@ -1,10 +1,16 @@
+---
+nav-title: "Welcome to Android Runtime for NativeScript"
+title: "Android Runtime for NativeScript"
+description: "NativeScript Android Runtime Documentation introduction"
+position: 0
+---
+
 # Welcome to NativeScript's Android Runtime Documentation.
 The repository contains the raw content files. To see the HTML representation of these visit [nativescript.com/documentation](http://nsbuild01/docs/README.html).
 
 ## Table of contents
-* Overview
-	* [Overview](./overview/overview.md)
-	* [Requirements](./overview/requirements.md)
+* [Overview](./overview.md)
+* [Requirements](./requirements.md)
 * Getting Started
 	* [Hello World Application](./getting-started/hello-world.md)
 	* [Project Structure](./getting-started/project-structure.md)
