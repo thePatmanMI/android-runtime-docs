@@ -5,7 +5,7 @@ NativeScript is a framework which enables developers to write truly native mobil
 The Android Runtime is built on top of the following major modules:
 
 ### Google's V8 JavaScript Virtual Machine
-It is responsible for the JavaScript code interpretation. A good analogy may be made with the way Node.js processes JavaScript and translates it to the underlying system APIs. We are handling each getter/setter on JavaScript objects and dynamically call Android APIs when needed. The virtual machine is loaded in the application's process and operates on the main UI thread.
+It is responsible for the JavaScript code processing. A good analogy may be made with the way Node.js processes JavaScript and translates it to the underlying system APIs. We are handling each getter/setter on JavaScript objects and dynamically call Android APIs when needed. The virtual machine is loaded in the application's process and operates on the main UI thread. V8 uses the JIT (Just-In-Time) compilation technique to process JavaScript code.
 
 ### Metadata
 This is our own custom data format for listing the Android APIs we are aware of (may process). It stores the minimal required information and provides small size and highly efficient read access. Some may wonder why we are not using the Java Reflection mechanism to lookup API signature at runtime. The answer is simple: reflection is slow as hell and simply may not be used, slowing down a simple application many times. The Metadata is pre-generated and embedded in the application package (apk). The generation process itself uses reflection to list all the available Android APIs hence it is slow and may not be dynamically executed.
