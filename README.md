@@ -6,6 +6,10 @@ The repository contains the raw content files. To see the HTML representation of
 	* [Overview](./overview/overview.md)
 	* [Requirements](./overview/requirements.md)
 * Getting Started
+	* [Hello World Application](./getting-started/hello-world.md)
+	* [Project Structure](./getting-started/project-structure.md)
+	* [Execution Flow](./getting-started/execution-flow.md)
+	* [Modules & Require](./getting-started/require.md)
 * Metadata
 	* [Overview](./metadata/overview.md)
 	* [Accessing APIs](./metadata/accessing-packages.md)
@@ -22,4 +26,4 @@ The repository contains the raw content files. To see the HTML representation of
 	* [Gotchas](./generator/gotchas.md)
 * Using External Libraries
 	* [Simple JAR Libs](./external-libs/jars.md)
-	* [Simple JAR Libs](./external-libs/jars.md)
+	* [Libraries With Resources](./external-libs/resource-libs.md)
