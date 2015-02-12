@@ -1,7 +1,7 @@
 ---
 nav-title: "Welcome to Android Runtime for NativeScript"
 title: "Android Runtime for NativeScript"
-description: "NativeScript Android Runtime Documentation introduction"
+description: "NativeScript Android Runtime Documentation Introduction"
 position: 0
 ---
 
