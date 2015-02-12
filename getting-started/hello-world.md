@@ -26,16 +26,16 @@ The content in this document describes how to create a NativeScript Application 
 		* Copy the `armeabi-v7a` and `x86` folders and paste them in the project's `jniLibs` folder.
 * Within the project's `assets` folder create a new folder named `app`.
 * Create a new `bootstrap.js` file within the `app` folder.
-* Open the` AndroidManifest.xml` file and edit the name of the activity like:
-```xml
-<activity
-    android:name="com.tns.NativeScriptActivity"
-    ...
-```
 * Open the` AndroidManifest.xml` file and edit the name of the application like: 
 ```xml
 <application
     android:name="com.tns.NativeScriptApplication"
+    ...
+```
+* Open the` AndroidManifest.xml` file and edit the name of the activity like:
+```xml
+<activity
+    android:name="com.tns.NativeScriptActivity"
     ...
 ```
 
