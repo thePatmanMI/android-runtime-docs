@@ -2,7 +2,7 @@
 nav-title: "Hello World Application"
 title: "Hello World Application"
 description: "NativeScript Android Runtime Getting Started - Hello World"
-position: 0
+position: 1
 ---
 
 # Overview
@@ -75,4 +75,7 @@ var applicationInitObject = {
 app.init(applicationInitObject);
 
 ```
-Build and run the project. You should see a large button named "Hello World", occupying the application's content space.
+Build and run the project. You should see a button named "Hello World", occupying the application's content space.
+
+# See Also
+* [Project Structure](./project-structure.md)
