@@ -14,7 +14,7 @@ The repository contains the raw content files. To see the HTML representation of
 * Getting Started
 	* [Hello World Application](./getting-started/hello-world.md)
 	* [Project Structure](./getting-started/project-structure.md)
-	* [Modules & Require](./getting-started/require.md)
+	* [Modules & Require](./getting-started/modules.md)
 * Metadata
 	* [Overview](./metadata/overview.md)
 	* [Accessing APIs](./metadata/accessing-packages.md)
