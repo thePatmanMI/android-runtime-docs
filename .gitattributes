@@ -1,4 +1,4 @@
-*.md eol=crlf
+*.md eol=lf
 *.jpg -text
 *.jpeg -text
 *.png -text
