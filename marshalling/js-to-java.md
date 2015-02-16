@@ -87,14 +87,22 @@ myObject.myMethod(10.5); // myMethod(double) will be called.
 * Explicitly call an overload: <br/>
 To enable developers call a specific method overload, the Runtime exposes the following functions directly in the global context:
 
-	* byte(number) → Java primitive byte <br/>
+	* byte(number) → Java primitive byte
+
 	>**Note:** The number value will be truncated and only its first byte of the whole part will be used.
-	* short(number) → Java primitive short <br/>
+
+	* short(number) → Java primitive short
+
 	>**Note:** The number value will be truncated and only its first 2 bytes of the whole part will be used.
-	* float(number) → Java primitive float <br/>
+
+	* float(number) → Java primitive float
+
 	>**Note:** The number value will be converted (with a possible precision loss) to a 2^32 floating-point value.
-	* long(number) → Java primitive long (in case the number literal fits JavaScript 2^53 limit) <br/>
+
+	* long(number) → Java primitive long (in case the number literal fits JavaScript 2^53 limit)
+
 	>**Note:** The number value's whole part will be taken only.
+	
 	* long("number") → Java primitive long (in case the number literal doesn't fit JavaScript 2^53 limit)
 
 ```javascript
