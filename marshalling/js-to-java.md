@@ -28,8 +28,8 @@ var enabled = false; // JavaScript Boolean
 button.setEnabled(enabled); // enabled is converted to Java primitive boolean
 ```
 
-### Undefined
-JavaScript [Undefined](http://www.w3schools.com/jsref/jsref_undefined.asp) maps to Java [null literal](http://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.10.7) (or null pointer).
+### Undefined & Null
+JavaScript [Undefined](http://www.w3schools.com/jsref/jsref_undefined.asp) & [Null](http://www.w3schools.com/js/js_typeof.asp) maps to Java [null literal](http://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.10.7) (or null pointer).
 
 ```javascript
 var context = ...;
@@ -85,16 +85,24 @@ myObject.myMethod(10.5); // myMethod(double) will be called.
 >**Note:** If there is no myMethod(double) implementation, the Runtime will try to choose the best possible overload with least conversion loss. If no such method is found an exception will be raised.
 
 * Explicitly call an overload: <br/>
-To enable developers to call a specific method overload, the Runtime exposes the following functions directly in the global context:
+To enable developers call a specific method overload, the Runtime exposes the following functions directly in the global context:
 
-	* byte(number) → Java primitive byte
-	* short(number) → Java primitive short
-	* float(number) → Java primitive float
-	* long(number) → Java primitive long (in case the number literal fits JavaScript 2^53 limit)
+	* byte(number) → Java primitive byte <br/>
+	>**Note:** The number value will be truncated and only its first byte of the whole part will be used.
+	* short(number) → Java primitive short <br/>
+	>**Note:** The number value will be truncated and only its first 2 bytes of the whole part will be used.
+	* float(number) → Java primitive float <br/>
+	>**Note:** The number value will be converted (with a possible precision loss) to a 2^32 floating-point value.
+	* long(number) → Java primitive long (in case the number literal fits JavaScript 2^53 limit) <br/>
+	>**Note:** The number value's whole part will be taken only.
 	* long("number") → Java primitive long (in case the number literal doesn't fit JavaScript 2^53 limit)
 
 ```javascript
-myObject.myMethod(byte(10)); // will call the myMethod(byte) implementation
+myObject.myMethod(byte(10)); // will call myMethod(byte)
+myObject.myMethod(short(10)); // will call myMethod(short)
+myObject.myMethod(float(10)); // will call myMethod(float)
+myObject.myMethod(long(10)); // will call myMethod(long)
+myObject.myMethod(long("123456")); // will convert "123456" to Java long and will call myMethod(long)
 ```
 
 >**Note:** When an explicit cast function is called and there is no such implementation found, the Runtime will directly fail, without trying to find a matching overload.
