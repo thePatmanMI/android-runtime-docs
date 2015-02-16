@@ -23,3 +23,4 @@ Unlike in Node, NativeScript **does not** have the notation for *Global Modules*
 # See Also
 * [Project Structure](./project-structure.md)
 * [Cross-platform Modules](https://github.com/NativeScript/docs)
+* [Node Modules](http://nodejs.org/api/modules.html)

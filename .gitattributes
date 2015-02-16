@@ -1,0 +1,5 @@
+*.md eol=lf
+*.jpg -text
+*.jpeg -text
+*.png -text
+*.bmp -text
