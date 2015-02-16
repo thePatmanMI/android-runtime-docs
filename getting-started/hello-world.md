@@ -79,3 +79,5 @@ Build and run the project. You should see a button named "Hello World", occupyin
 
 # See Also
 * [Project Structure](./project-structure.md)
+* [Command-Line Interface](https://github.com/NativeScript/nativescript-cli)
+* [Cross-Platform Modules](https://github.com/NativeScript/docs)
