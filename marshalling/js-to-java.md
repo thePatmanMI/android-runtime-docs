@@ -89,19 +89,19 @@ To enable developers call a specific method overload, the Runtime exposes the fo
 
 	* byte(number) → Java primitive byte
 
-	>**Note:** The number value will be truncated and only its first byte of the whole part will be used.
+	>The number value will be truncated and only its first byte of the whole part will be used.
 
 	* short(number) → Java primitive short
 
-	>**Note:** The number value will be truncated and only its first 2 bytes of the whole part will be used.
+	>The number value will be truncated and only its first 2 bytes of the whole part will be used.
 
 	* float(number) → Java primitive float
 
-	>**Note:** The number value will be converted (with a possible precision loss) to a 2^32 floating-point value.
+	>The number value will be converted (with a possible precision loss) to a 2^32 floating-point value.
 
 	* long(number) → Java primitive long (in case the number literal fits JavaScript 2^53 limit)
 
-	>**Note:** The number value's whole part will be taken only.
+	>The number value's whole part will be taken only.
 	
 	* long("number") → Java primitive long (in case the number literal doesn't fit JavaScript 2^53 limit)
 
