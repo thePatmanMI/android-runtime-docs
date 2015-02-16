@@ -97,6 +97,8 @@ To enable developers to call a specific method overload, the Runtime exposes the
 myObject.myMethod(byte(10)); // will call the myMethod(byte) implementation
 ```
 
+>**Note:** When an explicit cast function is called and there is no such implementation found, the Runtime will directly fail, without trying to find a matching overload.
+
 ### Array
 A JavaScript [Array](http://www.w3schools.com/jsref/jsref_obj_array.asp) is implicitly converted to a [Java Array](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html), using the above described rules for type conversion of the array's elements. For example:
 
