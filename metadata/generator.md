@@ -2,7 +2,7 @@
 nav-title: "Building Metadata"
 title: "Building Metadata"
 description: "NativeScript Android Runtime Building Metadata"
-position: 1
+position: 3
 ---
 
 # Overview
