@@ -131,3 +131,6 @@ var myObject = new MyObject();
 myObject.myMethod(items); // will convert to Java array of java.lang.String objects
 
 ```
+
+# See Also
+* [Java to JavaScript](./java-to-js.md)
