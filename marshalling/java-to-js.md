@@ -28,7 +28,7 @@ var enabled = button.isEnabled(); // returns primitive boolean, converted to JS 
 ### Byte & Primitive byte
 Both the primitive [byte](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html) and reference [java.lang.Byte](http://docs.oracle.com/javase/7/docs/api/java/lang/Byte.html) types are projected as JavaScript [Number](http://www.w3schools.com/jsref/jsref_obj_number.asp):
 
-```
+```javascript
 var byte = new java.lang.Byte("1");
 var jsByteValue = byte.byteValue(); // returns primitive byte, converted to Number
 ```
@@ -36,7 +36,7 @@ var jsByteValue = byte.byteValue(); // returns primitive byte, converted to Numb
 ### Short & Primitive short
 Both the primitive [short](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html) and reference [java.lang.Short](http://docs.oracle.com/javase/7/docs/api/java/lang/Short.html) types are projected as JavaScript [Number](http://www.w3schools.com/jsref/jsref_obj_number.asp):
 
-```
+```javascript
 var short = new java.lang.Short("1");
 var jsShortValue = short.shortValue(); // returns primitive short, converted to Number
 ```
@@ -44,7 +44,7 @@ var jsShortValue = short.shortValue(); // returns primitive short, converted to 
 ### Integer & Primitive int
 Both the primitive [int](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html) and reference [java.lang.Integer](http://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html) types are projected as JavaScript [Number](http://www.w3schools.com/jsref/jsref_obj_number.asp):
 
-```
+```javascript
 var int = new java.lang.Integer("1");
 var jsIntValue = int.intValue(); // returns primitive int, converted to Number
 ```
@@ -52,7 +52,7 @@ var jsIntValue = int.intValue(); // returns primitive int, converted to Number
 ### Float & Primitive float
 Both the primitive [float](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html) and reference [java.lang.Float](http://docs.oracle.com/javase/7/docs/api/java/lang/Float.html) types are projected as JavaScript [Number](http://www.w3schools.com/jsref/jsref_obj_number.asp):
 
-```
+```javascript
 var float = new java.lang.Float("1.5");
 var jsFloatValue = float.floatValue(); // returns primitive float, converted to Number
 ```
@@ -60,7 +60,7 @@ var jsFloatValue = float.floatValue(); // returns primitive float, converted to 
 ### Double & Primitive double
 Both the primitive [double](http://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html) and reference [java.lang.Double](http://docs.oracle.com/javase/7/docs/api/java/lang/Double.html) types are projected as JavaScript [Number](http://www.w3schools.com/jsref/jsref_obj_number.asp):
 
-```
+```javascript
 var double = new java.lang.Double("1.5");
 var jsDoubleValue = double.doubleValue(); // returns primitive double, converted to Number
 ```
@@ -118,7 +118,7 @@ var background = button.getBackground(); // if there is no background drawable m
 ```
 
 ### Android Types
-All Android-declared types are projected to JavaScript using the Package and Class proxies as described in [Accessing APIs](../metadata/accessing-packages.md))
+All Android-declared types are projected to JavaScript using the Package and Class proxies as described in [Accessing APIs](../metadata/accessing-packages.md)
 
 # See Also
 * [JavaScript to Java](./js-to-java.md)

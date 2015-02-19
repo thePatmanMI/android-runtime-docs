@@ -23,7 +23,6 @@ The repository contains the raw content files. To see the HTML representation of
 	* [Overview](./marshalling/overview.md)
 	* [JavaScript to Java](./marshalling/js-to-java.md)
 	* [Java to JavaScript](./marshalling/java-to-js.md)
-	* [Calling Method Overloads](./marshalling/overloads.md)
 * Binding (Dynamic Type) Generator
 	* [Overview](./generator/overview.md)
 	* [How Extend Works](./generator/how-extend-works.md)
