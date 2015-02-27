@@ -24,9 +24,9 @@ The repository contains the raw content files. To see the HTML representation of
 	* [JavaScript to Java](./marshalling/js-to-java.md)
 	* [Java to JavaScript](./marshalling/java-to-js.md)
 * Binding (Dynamic Type) Generator
-	* [Overview](./generator/overview.md)
-	* [How Extend Works](./generator/how-extend-works.md)
+	* [Overview](./generator/overview.md)	
 	* [Extending Classes and Interfaces](./generator/extend-class-interface.md)
+	* [How Extend Works](./generator/how-extend-works.md)
 	* [Gotchas](./generator/gotchas.md)
 * Using External Libraries
 	* [Simple JAR Libs](./external-libs/jars.md)

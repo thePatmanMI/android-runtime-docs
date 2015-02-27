@@ -1,48 +1,52 @@
 ---
 nav-title: "Gotchas"
 title: "Gotchas"
-description: "NativeScript Android Runtime Known Limitations"
+description: "NativeScript Android Runtime Extend Limitations"
 position: 4
 ---
 
-## Overview
+# Implicit Class Names
 
-As explained in the previous page, everytime when you inherit from a class or implement an interface NativeScript runtime generates a new class. By default you don't have to specify a class name and NativeScript will pick one for you. The current naming convention generates a class name based on the following:
-* The base class name
-* The name of file in which you declare the type plus the row and column number
+As explained in [How Extend Works](./how-extend-works.md), everytime you inherit from a class or implement an interface, the Runtime generates a new class. By default you don't have to specify a class name and NativeScript will pick one for you. This, however, has some important implications.
 
-This has some important implications. Let's have a look the following code fragment.
+### The Problem
 
-```JavaScript
-var MyButton = new android.widget.Button.extend({
-    setEnabled: function(enabled) {
-      // do something
-    }
-});
+Let's have a look the following code fragment:
+
+```javascript
+function buttonFactory() {
+	var MyButton = new android.widget.Button.extend({
+    	setEnabled: function(enabled) {
+      		// do something
+    	}
+	});
+}
 ```
-Because `extend` function generates a new class each time when is called, the second time you call it you will an error. In this example the error message reads the following.
 
-*Extend name android/widget/Button-f--mainpage-l45-c23-- already used*
+Java classes must have unique names. And because the `extend` function generates a new class each time when is called, the second time you call the `buttonFactory` function it will throw an error. In this example the error message is:
 
-The error message gives us an important information. More preciessly, the file (*mainpage.js*), the line (*45*) and the column (*23*) number.
+> Extend name android_widget_button_mainpage_l10_c20 already used
 
-##Workaround
+The message tells us that we are trying to generate a class with an already existing name. It also gives us an important information - the file (*mainpage.js*), the line (*10*) and the column (*20*) number where the `extend` call is made.
 
-The full `extend` syntext is as follows.
+### The Workaround
 
-```JavaScript
-extend(<className>, <implementationObject>)
-```
-We can take advantage of the first parameter to specify a unique class name each time when `extend` is called. The refactored code should like something like the following.
+Having in mind the full [extend syntax](./how-extend-works.md), we can take advantage of the first parameter to specify a unique class name each time when `extend` is called. The updated code would look like the following:
 
+```javascript
+function buttonFactory(className) {
+	var MyButton = new android.widget.Button.extend(className, {
+    	setEnabled: function(enabled) {
+      		// do something
+    	}
+	});
+};
 
-```JavaScript
 var className = getUniqueClassName(...);
-var MyButton = new android.widget.Button.extend(className, {
-    setEnabled: function(enabled) {
-      // do something
-    }
-});
+var newButton = buttonFactory(className);
 ```
 
-Another, even simpler, option is to guarantee that the desired `extend` function call is made only once per <file, line number, column number> combination.
+> **Note:** Ideally, you will use extend only when needed, once per the <file, line number, column number> combination.
+
+# See Also
+* [How Extend Works](./how-extend-works.md)
