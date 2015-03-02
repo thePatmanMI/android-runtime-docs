@@ -1,10 +1,3 @@
----
-nav-title: "Welcome to Android Runtime for NativeScript"
-title: "Android Runtime for NativeScript"
-description: "NativeScript Android Runtime Documentation Introduction"
-position: 0
----
-
 # Welcome to NativeScript's Android Runtime Documentation.
 The repository contains the raw content files. To see the HTML representation of these visit [nativescript.com/documentation](http://nsbuild01/docs/README.html).
 

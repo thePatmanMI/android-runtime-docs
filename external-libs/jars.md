@@ -1,8 +1,15 @@
-## Overview
+---
+nav-title: "Simple Jar Libs"
+title: "Simple Jar Libs"
+description: "NativeScript Android Runtime Requirements"
+position: 1
+---
+
+# Overview
 
 Often Android projects use third-party libraries in order to provide and/or consume application functionality. NativeScript for Android supports this scenario as well. In this article you will learn how to add JAR libraries to your NativeScript for Android project.
 
-## Adding JAR libraries
+# Adding JAR libraries
 
 One of the most common formats in which third-party libraries for Android are distributed is ordinary JAR file. Adding one or more JAR files to your NativeScript for Android project is done through `tns` command tool.
 
@@ -36,7 +43,7 @@ This command with read all JAR files from <path_to_dir> folder and will add refe
 
 The newly created `lib` folder will contain a copy of the third-party libraries. The libraries in this folder will be referenced from your project.
 
-## Generate metadata
+# Generate metadata
 
 Once yoy added third-party libraries to your project, you have to generate metadata. Generating metadata is part from build command.
 
