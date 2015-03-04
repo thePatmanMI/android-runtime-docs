@@ -27,5 +27,7 @@ The repository contains the raw content files. To see the HTML representation of
 * TypeScript Support
 	* Extending Android Types
 	* Gotchas
+* Debugging
+	* [Debugging NativeScript for Android](./debug/debug-android.md)
 * Advanced Topics
 	* [Execution Flow](./getting-started/execution-flow.md)
