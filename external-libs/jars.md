@@ -26,7 +26,7 @@ You can add one or more JAR files to your NativeScripr for Android project with 
 tns library add android <path_to_dir>
 ```
 
-This command with read all JAR files from <path_to_dir> folder and will add reference to them in your project. As a result, this will create a new folder `lib` which is sibling to already existing `app` and `platforms`.
+This command will read all JAR files from <path_to_dir> folder and will add reference to them in your project. As a result, this will create a new folder `lib` which is sibling to already existing `app` and `platforms`.
 
 ```
 <project_name>
