@@ -99,5 +99,5 @@ public class android_view_ViewGroup_myFile_l10_c20 extends android.view.ViewGrou
 
 # See Also
 * [Gotchas](./gotchas.md)
-* [Data Conversion Overview](./marshalling/overview.md)
-* [JavaScript to Java Data Conversion](./marshalling/js-to-java.md)
+* [Data Conversion Overview](../marshalling/overview.md)
+* [JavaScript to Java Data Conversion](../marshalling/js-to-java.md)
