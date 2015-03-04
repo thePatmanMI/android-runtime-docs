@@ -36,7 +36,7 @@ This command will read `project.properties` file from the specified shared libra
 |--app/
 |--lib/
    |--Android/
-      |--<your_shard_lib>
+      |--<your_shared_lib>
       |--...
 |--platforms/
 ```
