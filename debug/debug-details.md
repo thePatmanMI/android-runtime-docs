@@ -1,0 +1,34 @@
+---
+nav-title: "Debug Details"
+title: "Debug Details"
+description: "NativeScript Android Runtime Overview"
+position: 2
+---
+
+# Overview
+
+NativeScript for Android uses V8 JavaScript engine. As a consequence it follows you can you any V8 debbuger to debug you application. In this article we will see how to use two different V8 debuggers.
+
+# Using Remote Chromium Javascript Debugger for Eclipse
+
+You can use [Remote Chromium Javascript Debugger for Eclipse](https://code.google.com/p/chromedevtools/wiki/EclipseDebugger) to debug NativeScript for Android appliction. Please note that this [project](https://code.google.com/p/chromedevtools/) is no longer maintained but is perfectly capable to debug any V8 instance. For the purpose of this article, we will outline how to install and congigure the Remote Chromium Javascript Debugger plugin for Eclipse. You can read about it in more details at [https://code.google.com/p/chromedevtools/wiki/EclipseDebugger](https://code.google.com/p/chromedevtools/wiki/EclipseDebugger)
+
+You can install the plugin from Hepl->Install New Software menu in Eclipse. You have to specify the following url `http://chromedevtools.googlecode.com/svn/update/dev/` and then select `Chromium Javascript Remote Debugger` option.
+
+![Image1](./install_v8_eclipse_plugin.png)
+
+After the installation Eclipse will ask you for restart. Once you restart it, you can configure V8 as follows.
+
+![Image2](./v8_dbg_config.png)
+
+Please note that the selected port here is `8181` but you can specify any availabe port. Once you specify the debugger port you have to make sure that the port is accessible from your computer. The following command will forward the debugger port to the local one.
+
+```bash
+adb forward tcp:8181 tcp:8181
+```
+
+Once the debugger port is forwarded you should be able to debug your JavaScript code.
+
+# Using Node Inspector
+
+Another option is to use Node Inspector.
