@@ -37,4 +37,10 @@ waitForDebugger(portNumber);
 
 # Using Node Inspector
 
-Another option is to use Node Inspector. While Node Inspector is Node.js oriented some of the earlier versions are capable of debugging NativeScript for Android applications. 
+Another option is to use [Node Inspector](https://github.com/node-inspector/node-inspector). While Node Inspector is Node.js oriented some of the earlier versions are capable of debugging NativeScript for Android applications. As in the previous scenario you should make sure that the debugger port is forwarded via `adb forward` command. Then you can start Node Inspector with the following command.
+
+```bash
+node-inspector --debug-port=8181
+```
+
+Once you get the confirmation message `Visit http://127.0.0.1:8080/debug?port=8181 to start debugging.` you can open in Chrome browser url Node Inspector specified.
