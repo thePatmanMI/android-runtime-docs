@@ -27,8 +27,14 @@ Please note that the selected port here is `8181` but you can specify any availa
 adb forward tcp:8181 tcp:8181
 ```
 
-Once the debugger port is forwarded you should be able to debug your JavaScript code.
+Once the debugger port is forwarded you should be able to debug your JavaScript code. To enable the debugger fromwithin JavaScript you can call `waitForDebugger()` function. This function call will start the debugger on port `8181`. The full function signature is as follows.
+
+```JavaScript
+waitForDebugger(portNumber);
+```
+
+![Image3](./debug_screenshot.png)
 
 # Using Node Inspector
 
-Another option is to use Node Inspector.
+Another option is to use Node Inspector. While Node Inspector is Node.js oriented some of the earlier versions are capable of debugging NativeScript for Android applications. 
