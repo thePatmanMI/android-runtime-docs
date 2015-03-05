@@ -7,7 +7,7 @@ position: 2
 
 # Overview
 
-NativeScript for Android uses V8 JavaScript engine. As a consequence it follows you can you any V8 debbuger to debug you application. In this article we will see how to use two different V8 debuggers. Please note as NativeScript is in beta version some of the details may change in future.
+NativeScript for Android uses V8 JavaScript engine. As a consequence you can use any V8 debbuger to debug your application. In this article we will see how to use two different V8 debuggers. Please note as NativeScript is in beta version some of the details may change in future.
 
 # Using Remote Chromium Javascript Debugger for Eclipse
 
