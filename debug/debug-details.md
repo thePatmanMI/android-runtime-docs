@@ -36,7 +36,7 @@ waitForDebugger(portNumber);
 Here is a complete scenrio.
   *  install Remote Chromium Javascript Debugger plugin for Eclipse
   *  forward port `8181`
-  *  write `waitForDebugger();` as the desired place
+  *  write `waitForDebugger();` at the desired place
   *  run your Eclipse project
   *  attach V8 debugger when `waitForDebugger` function is called
   *  debug your JavaScript code
