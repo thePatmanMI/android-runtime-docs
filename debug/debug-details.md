@@ -17,7 +17,7 @@ You can install the plugin from Hepl->Install New Software menu in Eclipse. You 
 
 ![Image1](./install_v8_eclipse_plugin.png)
 
-After the installation Eclipse will ask you for restart. Once you restart it, you can configure V8 as follows.
+After the installation Eclipse will ask you for restart. Once you restart it, you can configure V8 debugger from Run->Debug Configuration menu.
 
 ![Image2](./v8_dbg_config.png)
 
