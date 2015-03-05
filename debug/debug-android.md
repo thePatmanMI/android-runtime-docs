@@ -19,6 +19,8 @@ The following command with build, deploy and run the application with attached d
 tns debug andorid --debug-brk
 ```
 
+![Image1](./debug-cli-screenshot.png)
+
 # Attach/detach debugger
 
 If you have a running application you can attach/detach debugger with the following commands.
