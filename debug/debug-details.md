@@ -38,7 +38,7 @@ Here is a complete scenrio.
   *  forward port `8181`
   *  write `waitForDebugger();` at the desired place
   *  run your Eclipse project
-  *  attach V8 debugger when `waitForDebugger` function is called
+  *  run V8 debugger as configured above
   *  debug your JavaScript code
 
 ![Image3](./debug_screenshot.png)
