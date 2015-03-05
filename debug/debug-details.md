@@ -1,7 +1,7 @@
 ---
 nav-title: "Debug Details"
 title: "Debug Details"
-description: "Debugging NativeScript for Android"
+description: "Advanced Debugging NativeScript for Android"
 position: 2
 ---
 
