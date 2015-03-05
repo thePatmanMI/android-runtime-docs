@@ -19,6 +19,8 @@ The following command with build, deploy and run the application with attached d
 tns debug andorid --debug-brk
 ```
 
+Behind the scenes `debug` command together with `--debug-brk` option will build and start the application, then it will find available port and enable V8 debugger on that port. Finally, it will start Node Inspector and launch Chrome browser.
+
 ![Image1](./debug-cli-screenshot.png)
 
 # Attach/detach debugger
