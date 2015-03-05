@@ -11,6 +11,8 @@ NativeScript for Android provides support for JavaScript debugging. The current 
   * Start debugging - starts an application with debugger enabled
   * Attach/Detach debugger - attach/detach debuggger to a running application
 
+Please note that the current implementation requires Chrome browser installed.  
+
 # Start an application with debugger enabled
 
 The following command with build, deploy and run the application with attached debugger. This will allow you to debug your application from the first JavaScript statement.
@@ -33,6 +35,8 @@ tns debug andorid --start
 ```bash
 tns debug andorid --stop
 ```
+
+As in the previous scenario, `debug` command with configure V8 debugger port, forward the port, stars Node Inspector and launch Chrome browser.
 
 # Miscellaneous
 
