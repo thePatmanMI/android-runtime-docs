@@ -36,7 +36,7 @@ tns debug andorid --start
 tns debug andorid --stop
 ```
 
-As in the previous scenario, `debug` command with configure V8 debugger port, forward the port, stars Node Inspector and launch Chrome browser.
+As in the previous scenario, `debug` command with configure V8 debugger port, forward the port, starts Node Inspector and launch Chrome browser.
 
 # Miscellaneous
 
