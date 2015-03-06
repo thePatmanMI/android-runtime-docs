@@ -1,4 +1,4 @@
-*.md eol=lf
+* text=auto
 *.jpg -text
 *.jpeg -text
 *.png -text
