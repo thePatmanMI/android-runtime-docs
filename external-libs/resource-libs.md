@@ -50,3 +50,6 @@ See [Generate Metadata](./jars.md#generate-metadata)
 # Remarks
 
 Currently, NativeScript for Android supports Eclipse project format only.
+
+# See Also
+* [Accessing APIs](../metadata/accessing-packages.md)
