@@ -33,6 +33,8 @@ Once the debugger port is forwarded you should be able to debug your JavaScript 
 __debugbreak(portNumber);
 ```
 
+> **NOTE:** `__debugbreak` is part from the internal NativeScript APIs and may be subject to a change in future. We recommend to use the starndard JavaScript `debugger;` statement instead.
+
 Here is a complete scenrio.
   *  install Remote Chromium Javascript Debugger plugin for Eclipse
   *  forward port `8181`
