@@ -16,7 +16,7 @@ The current implementation supports two major scenarios:
   * Start debugging - starts an application with the debugger enabled
   * Attach/Detach debugger - attach/detach the debugger to a running application
 
-# Start an application with the debugger enabled
+# Start an application with the debugger attached
 
 The following command will build, deploy and run the application with the debugger attached:
 
@@ -42,7 +42,7 @@ If you have a running application you can attach the debugger with the following
 tns debug android --start
 ```
 
-> As in the previous scenario, the `debug` command will configure the V8 debugger port, forward the port, start Node Inspector and launch Chrome browser. It will however will not automatically break and will only hit manually breakpoints.
+> As in the previous scenario, the `debug` command will configure the V8 debugger port, forward the port, start Node Inspector and launch Chrome browser. It will however will not automatically break and will only hit manually set breakpoints.
 
 # Detach the debugger
 You can detach the debugger from an already debugged application using the following command:
