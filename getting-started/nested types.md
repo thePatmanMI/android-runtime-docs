@@ -6,10 +6,10 @@ position: 4
 ---
 
 # Overview
-Both Java and JavaScript are high-level languages meaning that they both provide strong abstraction from the computer details. It is relatevely straightforward to express a high-level language to low-level one (for example to translate Java to Assembly). However, there are technical difficulties when it comes to translating one high-level concept to another one. Such difficulties are largely known as *impedance mismatch*. This article explains how the deal with the impedance mismatch when it comes to working with Java inner and nested types.
+Both Java and JavaScript are high-level languages meaning that they both provide strong abstraction from the computer details. It is relatively straightforward to express a high-level language to low-level one (for example to translate Java to Assembly). However, there are technical difficulties when it comes to translating one high-level concept to another one. Such difficulties are largely known as *impedance mismatch*. This article explains how the deal with the impedance mismatch when it comes to working with Java inner and nested types.
 
 # Java Nested Types
-Here is a short example that summerizes the relation between Java nested and inner types.
+Here is a short example that summarizes the relation between Java nested and inner types.
 ```Java
 public class Outer {
     public class Inner {
