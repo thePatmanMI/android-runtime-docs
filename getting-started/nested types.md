@@ -44,7 +44,7 @@ var nested =  new Outer.Nested();
 ```
 
 # Accessing Static Members
-NativeScript for Android support accessing static members of inner/nested types as well.
+NativeScript for Android supports accessing static members of inner/nested types as well.
 ```JavaScript
 var c = android.hardware.Camera.Parameters.ANTIBANDING_50HZ;
 ```
