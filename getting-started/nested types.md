@@ -43,4 +43,10 @@ var inner2 = new new Outer().Inner();
 var nested =  new Outer.Nested();
 ```
 
+# Accessing Static Members
+NativeScript for Android support accessing static members of inner/nested types as well.
+```JavaScript
+var c = android.hardware.Camera.Parameters.ANTIBANDING_50HZ;
+```
+In the previous example the constant `ANTIBANDING_50HZ` which is defined in the inner class `Parameters` of the class `android.hardware.Camera` is assigned to the variable `c`.
 
