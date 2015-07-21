@@ -5,4 +5,42 @@ description: "NativeScript Android Runtime Nested Types"
 position: 4
 ---
 
-# Nested Types
+# Overview
+Both Java and JavaScript are high-level languages meaning that they both provide strong abstraction from the computer details. It is relatevely straightforward to express a high-level language to low-level one (for example to translate Java to Assembly). However, there are technical difficulties when it comes to translating one high-level concept to another one. Such difficulties are largely known as *impedance mismatch*. This article explains how the deal with the impedance mismatch when it comes to working with Java inner and nested types.
+
+# Java Nested Types
+Here is a short example that summerizes the relation between Java nested and inner types.
+```Java
+public class Outer {
+    public class Inner {
+      // inner and nested class
+    }
+    
+    public static class Nested {
+      // nested but not inner class
+    }
+}
+```
+In short, an instance of inner types hold a reference to an instance of the outer type. You can find more information in the Java language specification (http://docs.oracle.com/javase/specs/jls/se8/html/). Here is an example how to instantiate objects from the example above.
+
+```Java
+Outer outer = new Outer();
+Outer.Inner inner1 = outer.new Inner();
+
+Outer.Inner inner2 = new Outer().new Inner();
+
+Outer.Nested nested = new Outer.Nested()
+```
+
+NativeScript for Android supports both nested and inner types. Here is the translated example from above.
+
+```JavaScript
+var outer = new Outer();
+var inner1 = new outer.Inner();
+
+var inner2 = new new Outer().Inner();
+
+var nested =  new Outer.Nested();
+```
+
+
