@@ -21,10 +21,8 @@ tns platform add android <project_name>
 You can  add a reference to a shared library with the following command.
 
 ```bash
-tns library add android <path_to_shared_library>
+tns library add android <path_to_libraries_dir>
 ```
-
-This command will read `project.properties` file from the specified shared library folder and will add a reference to it in your project. If in turn the shared library has references to other projects then these projects will be included recursively. As a result, this will create a new folder `lib` which is sibling to already existing `app` and `platforms`.
 
 ```
 <project_name>
@@ -41,15 +39,11 @@ This command will read `project.properties` file from the specified shared libra
 |--platforms/
 ```
 
-The `lib` folder will contain a copy of your shared library and its references if any.
+The `lib` folder will contain a copy of your shared library.
 
 # Generate Metadata
 
 See [Generate Metadata](./jars.md#generate-metadata)
-
-# Remarks
-
-Currently, NativeScript for Android supports Eclipse project format only.
 
 # See Also
 * [Accessing APIs](../metadata/accessing-packages.md)
