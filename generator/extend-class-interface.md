@@ -26,12 +26,19 @@ MyButton btn = new MyButton(context);
 Here is how the above is done in NativeScript:
 
 ```javascript
+var constructorCalled = false;
 var MyButton = android.widget.Button.extend({
-	setEnabled: function(enabled) {
-		this.supper.setEnable(enabled);
-	}
-});
-var btn = new MyButton(context);
+		//constructor
+		init: function() {
+			constructorCalled = true;
+		},
+		
+		setEnabled: function(enabled) {
+			this.super.setEnable(enabled);
+		}
+	});
+	var btn = new MyButton(context);
+	//constructorCalled is true here
 ```
 
 > **Note:** In the above setEnabled function the `this` keyword points to the JavaScript object that proxies the extended native instance. The `this.super` property provides access to the base class method implementation.
