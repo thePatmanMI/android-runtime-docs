@@ -42,23 +42,23 @@ app/
 |-- |-- gson-2.2.4.jar
 |-- |-- nativescript.jar
 |-- |-- android-binding-generator.jar
-src/
-|-- main/
-|-- |-- assets/
-|-- |-- |-- app/
-|-- |-- |-- |-- bootstrap.js
-|-- |-- |-- |-- [application logic]
-|-- |-- |-- internal/
-|-- |-- |-- metadata/
-|-- |-- |-- tns_modules/
-|-- |-- |-- |-- application/
-|-- |-- |-- |-- http/
-|-- |-- |-- |-- [more modules]
-|-- |-- jniLibs/
-|-- |-- |-- armeabi-v7a/
-|-- |-- |-- |-- libNativeScript.so
-|-- |-- |-- x86/
-|-- |-- |-- |-- libNativeScript.so
+|-- src/
+|-- |-- main/
+|-- |-- |-- assets/
+|-- |-- |-- |-- app/
+|-- |-- |-- |-- |-- bootstrap.js
+|-- |-- |-- |-- |-- [application logic]
+|-- |-- |-- |-- internal/
+|-- |-- |-- |-- metadata/
+|-- |-- |-- |-- tns_modules/
+|-- |-- |-- |-- |-- application/
+|-- |-- |-- |-- |-- http/
+|-- |-- |-- |-- |-- [more modules]
+|-- |-- |-- jniLibs/
+|-- |-- |-- |-- armeabi-v7a/
+|-- |-- |-- |-- |-- libNativeScript.so
+|-- |-- |-- |-- x86/
+|-- |-- |-- |-- |-- libNativeScript.so
 ...
 ```
 
