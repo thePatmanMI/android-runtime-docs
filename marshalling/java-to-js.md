@@ -108,6 +108,43 @@ var singleFile = files[0]; // the indexed getter callback is triggered and a pro
 
 >**Note:** A Java Array is intentionally not converted to a JavaScript [Array](http://www.w3schools.com/jsref/jsref_obj_array.asp) for the sake of performance, especially when it comes to large arrays.
 
+
+Occasionally you have to create Java arrays from JavaScript. For this scenario we added method `create` to built-in JavaScript [`Array` object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array). Here are some examples how to use `Array.create` method:
+
+```javascript
+// the following statement is equivalent to byte[] byteArr = new byte[10];
+var byteArr = Array.create("byte", 10);
+
+// the following statement is equivalent to String[] stringArr = new String[10];
+var stringArr = Array.create(java.lang.String, 10);
+```
+Here is the full specification for `Array.create` method
+```javascript
+Array.create(elementClassName, length)
+```
+```javascript
+Array.create(javaClassCtorFunction, length)
+```
+The first signature accepts `string` for `elementClassName`. This option is useful when you have to create Java array of primitive types (e.g. `char`, `boolean`, `byte`, `short`, `int`, `long`, `float` and `double`). It is also useful when you have to create Java jagged arrays. For this scenario `elementClassName` must be the standard JNI class notatio. Here are some examples:
+```javascript
+// equivalent to int[][] jaggedIntArray2 = new int[10][];
+var jaggedIntArray2 = Array.create("[I", 10);
+
+// equivalent to boolean[][][] jaggedBooleanArray3 = new boolean[10][][];
+var jaggedBooleanArray3 = Array.create("[[Z", 10);
+
+// equivalent to Object[][][][] jaggedObjectArray4 = new Object[10][][][];
+var jaggedObjectArray4 = Array.create("[[[Ljava.lang.Object;", 10);
+```
+The second signature uses `javaClassCtorFunction` which must the JavaScript constructor function for a given Java type. Here are some examples:
+```javascript
+// equivalent to String[] stringArr = new String[10];
+var stringArr = Array.create(java.lang.String, 10);
+
+// equivalent to Object[] objectArr = new Object[10];
+var objectArr = Array.create(java.lang.Object, 10);
+```
+
 ### Null
 The Java [null literal](http://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.10.7) (or null pointer) is projected to JavaScript [Null](http://www.w3schools.com/js/js_typeof.asp):
 
