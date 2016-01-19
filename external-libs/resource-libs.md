@@ -5,6 +5,8 @@ description: "NativeScript Android Runtime Requirements"
 position: 2
 ---
 
+> **IMPORTANT:** Use plugins for all intents and purposes involving external libs. Look at how to work with plugins [here]({% slug android-plugins-infrastructure %}).
+
 # Overview
 
 Often when you are developing an application you need to include a shared code or resources from a library. NativeScript for Android supports this scenario.

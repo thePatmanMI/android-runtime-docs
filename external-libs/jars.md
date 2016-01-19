@@ -5,6 +5,8 @@ description: "NativeScript Android Runtime Requirements"
 position: 1
 ---
 
+> **IMPORTANT:** Use plugins for all intents and purposes involving external libs. Look at how to work with plugins [here]({% slug android-plugins-infrastructure %}).
+
 # Overview
 
 Often Android projects use third-party libraries in order to provide and/or consume application functionality. NativeScript for Android supports this scenario as well. In this article you will learn how to add JAR libraries to your NativeScript for Android project.
