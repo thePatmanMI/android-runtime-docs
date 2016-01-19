@@ -45,7 +45,7 @@ The newly created `lib` folder will contain a copy of the third-party libraries.
 
 # Generate Metadata
 
-Once you added third-party libraries to your project, you have to generate metadata. Generating metadata is part from build command.
+After you have added third-party libraries to your project, you have to generate the metadata by issuing a build.
 
 ```bash
 tns build android
