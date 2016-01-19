@@ -45,15 +45,15 @@ The newly created `lib` folder will contain a copy of the third-party libraries.
 
 # Generate Metadata
 
-Once yoy added third-party libraries to your project, you have to generate metadata. Generating metadata is part from build command.
+After you have added third-party libraries to your project, you have to generate the metadata by issuing a build.
 
 ```bash
 tns build android
 ```
 
-The metadata is the key piece that allows you to instantiate and use the Java classes defined in the third-party libraries. It contains information what packages, types and methods are defined in the JAR libraries. The metadata files are located in `<project_name>/platforms/android/assets/metadata/` folder.
+The metadata is the key piece that allows you to instantiate and use the Java classes defined in the third-party libraries. It contains information what packages, types and methods are defined in the JAR libraries. The metadata files are located in `<project_name>/platforms/android/src/main/assets/metadata/` folder.
 
-Metadata alone is not enought to use third-party libraries. Your libraries must become part of the `*.apk` file that you will deploy. To make this possilbe the `build` command copies the JAR files in `<project_name>/platforms/android/libs/` folder.
+Metadata alone is not enought to use third-party libraries. Your libraries must become part of the `*.apk` file that you will deploy. To make this possilbe the `build` command copies the JAR files in `<project_name>/platforms/android/metadata/libs/` folder.
 
 # See Also
 * [Accessing API's](../metadata/accessing-packages.md)
