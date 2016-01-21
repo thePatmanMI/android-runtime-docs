@@ -3,7 +3,6 @@ title: Infrastructure
 description: When the NativeScript modules do not provide the native device or platform capability that you need, you can use NativeScript plugins.
 position: 0
 slug: android-plugins-infrastructure
-previous_url: /plugins
 ---
 
 Android Plugins Infrastructure
