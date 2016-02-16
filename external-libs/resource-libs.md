@@ -5,7 +5,7 @@ description: "NativeScript Android Runtime Requirements"
 position: 2
 ---
 
-> **IMPORTANT:** Use plugins for all intents and purposes involving external libs. Look at how to work with plugins [here]({% slug android-plugins-infrastructure %}).
+> **IMPORTANT:** Use plugins to work with external libs. For more information about working with plugins, see [Plugins > Infrastructure]({% slug android-plugins-infrastructure %}).
 
 # Overview
 
