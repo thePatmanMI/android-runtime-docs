@@ -16,7 +16,8 @@ Starting with NativeScript CLI 1.1.0, you can develop or use plugins in your Nat
     * [Android plugin elements](#android-plugin-elements)
     * [Include.gradle Specification](#includegradle-specification)
 * [Rules of thumb](#rules-of-thumb)
-    * [What do I use?](#what-do-i-use) 
+    * [What do I use?](#what-do-i-use)
+* [Plugin migration](#plugin-migration)
 
 ## What Are NativeScript Plugins
 
@@ -31,12 +32,12 @@ If the NativeScript framework does not expose a native API that you need, you ca
 * The plugin must be written in JavaScript or TypeScript and must comply with the CommonJS specification. If written in TypeScript, make sure to include the compiled `JavaScript` file in your plugin.
 * The plugin directory structure must comply with the specification described below.
 * The plugin must contain a valid `package.json` which complies with the specification described below.
-* If the plugin requires any permissions, features or other configuration specifics, it must contain `AndroidManifest.xml` file which describes them.
+* If the plugin requires any permissions, features or other configuration specifics, they must be added in the `app/App_Resources/Android/AndroidManifest.xml`.
 * If the plugin depends on native libraries, it must contain a valid `include.gradle file`, which describes the dependencies.
 
 ### Directory Structure
 
-This is what an Android NativeScript plugin can include.
+This is what an Android NativeScript plugin may include.
 ```
 my-plugin/
 ├── package.json
@@ -48,22 +49,18 @@ my-plugin/
 │   └── package.json
 └── platforms/
     ├── android/
-    │   └── AndroidManifest.xml
-    │   └── include.gradle
-    │   └── MyLibrary.aar
-    │   └── MyLibrary.jar
-    │   └── res/
+		└── include.gradle
+		└── MyLibrary.aar
+		└── MyLibrary.jar
 ```
 
 ### Android plugin elements
 
 You can find more information on the common parts of the NativeScript plugins like the `package.json` and js modules [here]({% slug plugins-infrastructure %}).
-* `platforms\android`: This directory contains any native Android libraries packaged as `*.jar` and `*.aar` packages. These native libraries can reside in the root of this directory or in a user-created sub-directory. During the plugin installation, the NativeScript CLI will configure the Android project in `platforms\android` to work with the plugin. 
-* `platforms\android\AndroidManifest.xml`: This file describes any specific configuration changes required for your plugin to work. For example: required permissions. For more information about the format of `AndroidManifest.xml`, see [App Manifest](http://developer.android.com/guide/topics/manifest/manifest-intro.html).<br/>During build, gradle will merge the plugin `AndroidManifest.xml` with the `AndroidManifest.xml` for your project. The NativeScript CLI will not resolve any contradicting or duplicate entries during the merge. After the plugin is installed, you need to manually resolve such issues.
+* `platforms\android`: This directory contains any native Android libraries packaged as `*.jar` and `*.aar` packages. These native libraries can reside in the root of this directory or in a user-created sub-directory. 
 * `platforms\android\include.gradle`: This file modifies the native Android configuration of your NativeScript project such as native dependencies, build types and configurations. For more information about the format of `include.gradle`, see [include.gradle file](#includegradle-specification).
 * `platforms\android\MyLibrary.aar` is an Android library. You can read more about the `.aar` format [here](http://tools.android.com/tech-docs/new-build-system/aar-format).
-* `platforms\android\MyLibrary.jar` is an Android library. You can read more about the `.jar` format [here](https://en.wikipedia.org/wiki/JAR_(file_format))
-* `platforms/android/res`:  This directory contains resources declared by the `AndroidManifest.xml` file. You can look at the folder structure [here](http://developer.android.com/guide/topics/resources/providing-resources.html#ResourceTypes).
+* `platforms\android\MyLibrary.jar` is a library. You can read more about the `.jar` format [here](https://en.wikipedia.org/wiki/JAR_(file_format))
 
 ### Include.gradle Specification
 
@@ -74,19 +71,8 @@ Every NativeScript plugin, which contains native Android dependencies, should al
 * Any native dependencies should be available in [jcenter](https://bintray.com/bintray/jcenter) or from the Android SDK installed on your machine if you want it to work out of the box. You can see an example of a compile dependency [here](https://github.com/NativeScript/nativescript-facebook-plugin/blob/master/platforms/android/include.gradle).
 * It can be used for any kind of native configuration. Find more information [here](http://developer.android.com/tools/building/configuring-gradle.html)
 
-> **IMPORTANT:** If you don't have an `include.gradle` file, at build time, gradle will create a default one containing all default elements.
-
 #### Include.gradle Example
 ```
-//default elements
-android { 
-    productFlavors {
-        "my-plugin" {
-            dimension "my-plugin"
-        }
-    }
-}
-
 //optional elements
 dependencies {
     compile "groupName:pluginName:ver"
@@ -108,6 +94,68 @@ When you want to create an Android NativeScript plugin and you want to add some 
 
 * In what cases should we prefer `.aar` files:
     * when we want to use some kind of an interactive SDK like facbook, dropbox, youtube, etc.
-    * when we need to use application components like activities, services, etc.
+    * when we need to use application components like activities, services, resources, etc.
 
 > **IMPORTANT:**  The recommended way of using AAR files inside a NativeScript plugin is to add it as a dependency in the `include.gradle` file inside the `platforms/android` folder of the plugin.
+
+### Plugin migration.
+
+Let's say you have a plugin with the following structure:
+**Case 1:**
+```
+my-plugin/
+├── package.json
+├── MyModule1/
+│   ├── index1.js
+│   └── package.json
+├── MyModule2/
+│   ├── index2.js
+│   └── package.json
+└── platforms/
+    ├── android/
+		└── AndroidManifest.xml
+		└── MyLibrary.aar
+```
+
+**What to do to migrate this plugin?**
+Take all the plugin related info from the `AndroidManifest.xml` and put it in the MyLibrary.aar's `AndroidManifest.xml`. You can do that one of two ways:
+* Unpack MyLibrary.aar file and update its `AndroidManifest.xml`.
+* Open `.aar` source project and update its `AndroidManifest.xml`, then rebuild `.aar` file.
+
+**Case 2:**
+```
+my-plugin/
+├── package.json
+├── MyModule1/
+│   ├── index1.js
+│   └── package.json
+├── MyModule2/
+│   ├── index2.js
+│   └── package.json
+└── platforms/
+    ├── android/
+		└── AndroidManifest.xml
+		└── MyLibrary.jar
+```
+**What to do to migrate this plugin?**
+Take all the plugin related info from the `AndroidManifest.xml` and put it in `app\App_Resources\Android\AndroidManifest.xml`.
+
+
+**Case 3:**
+```
+my-plugin/
+├── package.json
+├── MyModule1/
+│   ├── index1.js
+│   └── package.json
+├── MyModule2/
+│   ├── index2.js
+│   └── package.json
+└── platforms/
+    ├── android/
+		└── AndroidManifest.xml
+		└──	res/
+		└── MyLibrary.jar
+```
+**What to do to migrate this plugin?**
+Create a new Android Studio project and migrate the code to an `.aar` file. The `.aar` file is a self contained project by itself so it contains `res/` folder, `AndroidManifest.xml` and source files.
