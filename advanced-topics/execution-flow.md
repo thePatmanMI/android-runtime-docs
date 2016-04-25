@@ -9,7 +9,7 @@ position: 1
 
 Android Runtime 
 ---
-NativeScript is a framework which enables developers to write truly native mobile applications for Android and iOS using JavaScript and CSS. Each mobile platform has its own ecosystem and offers completely different development tools and language(s) - Java for Android and Objective C (Swift) for iOS. In order to translate JavaScript code to the corresponding native APIs some kind of proxy mechanism is needed. This is exactly what the ["Runtime" parts of NativeScript](http://docs.nativescript.org/runtimes/android/overview) are responsible for. The Android Runtime may be thought of as "The Bridge" between the JavaScript and Android worlds. 
+NativeScript is a framework which enables developers to write truly native mobile applications for Android and iOS using JavaScript and CSS. Each mobile platform has its own ecosystem and offers completely different development tools and language(s) - Java for Android and Objective C (Swift) for iOS. In order to translate JavaScript code to the corresponding native APIs some kind of proxy mechanism is needed. This is exactly what the ["Runtime" parts of NativeScript](../overview.md) are responsible for. The Android Runtime may be thought of as "The Bridge" between the JavaScript and Android worlds. 
  
 A NativeScript application for Android is a standard native package (apk) which besides the JavaScript files embed the runtime as well.
  
@@ -18,16 +18,16 @@ The Android Runtime is built on top of **[Google's V8 JavaScript Virtual Machine
 ---
  
 ## Google's V8
- V8 is the JavaScript Engine which compiles and executes the JavaScript code. It takes advantage of the [Just-In-Time technique](http://whatis.techtarget.com/definition/just-in-time-compiler-JIT) to process JavaScript code with great efficiency. [Read more.](https://github.com/v8/v8/wiki/Introduction)
+ V8 is the JavaScript Engine which compiles and executes the JavaScript code. It takes advantage of the [Just-In-Time technique](http://whatis.techtarget.com/definition/just-in-time-compiler-JIT) to process JavaScript code with great efficiency. [Read more.](https://developers.google.com/v8/)
  
 ## JNI
  JNI is the **Java Native Interface** that provides means for Java code to interact with native code. Put shortly - it allows a Java program to invoke functions in another C/C++ program and vice versa. In the context of a NativeScript application JNI is the communicational layer between the V8 JavaScript Engine and the platform - Java/Android code. [Read more.](http://developer.android.com/training/articles/perf-jni.html)
  
 ## Metadata Generator 
- The [Metadata Generator](http://docs.nativescript.org/runtimes/android/metadata/overview.html) uses Apache Commons BCEL to iterate through all native dependencies added to the project, and exposes their public API to the Android Runtime.
+ The [Metadata Generator](../metadata/overview.md) uses Apache Commons BCEL to iterate through all native dependencies added to the project, and exposes their public API to the Android Runtime.
      
 ## Bindings Generator
- The Bindings Generator is responsible for the dynamic generation of implemented classes and interfaces. When the user implements an Android object, a custom Java proxy object is created. The process of generating Java classes at run-time is highly optimized. [Read more.](http://docs.nativescript.org/runtimes/android/generator/overview.html)
+ The [Bindings Generator](../generator/overview.md) is responsible for the dynamic generation of implemented classes and interfaces. When the user implements an Android object, a custom Java proxy object is created. The process of generating Java classes at run-time is highly optimized.
  
 ---
  
@@ -83,10 +83,13 @@ And now let's go through the steps of exactly what happens when we write the abo
 
 ---
  
-# Application Workflow Illustration
+# Execution Flow Illustration
+Now that we know how to access the native API, let's have a look at the common execution flow of an application written in NativeScript.
+Triggering an event in Android will always be handled by the Dalvik Virtual Machine ([ART](https://en.wikipedia.org/wiki/Android_Runtime)) which acts as the first responder in a native application. Any implementation included in the body of the event will then be executed by the NativeScript Android runtime, and the result of the operation returned to JavaScript. If a change to a native variable or view is made, instructions will again go through Dalvik. 
+
+**Note**: If no changes to native variables are present as a result of the execution of the callback (for example, when a local JavaScript variable that doesnt hold a reference to an Android object is modified - a number, a string, an array of JavaScript Objects, etc.), no calls to Dalvik will be made.
+ 
+Execution Flow illustration:
 ![How a NativeScript program's execution flow looks like on Android devices](app_process.png)
 
 ---
-
-# Summary
-... To be finished
