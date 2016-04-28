@@ -9,11 +9,9 @@ position: 1
 
 Android Runtime 
 ---
-NativeScript is a framework which enables developers to write truly native mobile applications for Android and iOS using JavaScript and CSS. Each mobile platform has its own ecosystem and offers completely different development tools and language(s) - Java for Android and Objective C (Swift) for iOS. In order to translate JavaScript code to the corresponding native APIs some kind of proxy mechanism is needed. This is exactly what the ["Runtime" parts of NativeScript](../overview.md) are responsible for. The Android Runtime may be thought of as "The Bridge" between the JavaScript and Android worlds. 
- 
-A NativeScript application for Android is a standard native package (apk) which besides the JavaScript files embed the runtime as well.
- 
-The Android Runtime is built on top of **[Google's V8 JavaScript Virtual Machine](#googles-v8)**. Pre-generated **[Metadata](#metadata-generator)** is embedded in the resulting application and as a result we get very efficient native access, while the **[Binding Generator](#binding-generator)** component takes care of the creation of custom Java classes run-time to extend Java/Android class functionality or serve as proxy.
+_Disclaimer: This article assumes that you are familiar with the core concepts of [NativeScript](http://docs.nativescript.org/) and the [NativeScript Android Runtime](../overview.md)_
+
+The Android Runtime is built on top of **[Google's V8 JavaScript Virtual Machine](#googles-v8)**. Pre-generated **[Metadata](#metadata-generator)** is embedded in the resulting application and as a result we get very efficient native access, while the **[Binding Generator](#binding-generator)** component takes care of the creation of custom Java classes build-time to extend Java/Android class functionality or serve as proxy.
  
 ---
  
@@ -27,7 +25,7 @@ The Android Runtime is built on top of **[Google's V8 JavaScript Virtual Machine
  The [Metadata Generator](../metadata/overview.md) uses Apache Commons BCEL to iterate through all native dependencies added to the project, and exposes their public API to the Android Runtime.
      
 ## Bindings Generator
- The [Bindings Generator](../generator/overview.md) is responsible for the dynamic generation of implemented classes and interfaces. When the user implements an Android object, a custom Java proxy object is created. The process of generating Java classes at run-time is highly optimized.
+ The [Bindings Generator](../generator/overview.md) is responsible for the dynamic generation of implemented classes and interfaces. When the user implements an Android object, a custom Java proxy object is created. The process of generating Java classes at build-time is highly optimized.
  
 ---
  
