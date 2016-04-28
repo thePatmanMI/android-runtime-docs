@@ -5,6 +5,8 @@ position: 0
 slug: android-plugins-infrastructure
 ---
 
+> **IMPORTANT:** The CLI command `tns library add` is no longer supported. Use plugins to work with external libs.
+
 Android Plugins Infrastructure
 =========
 
@@ -24,6 +26,7 @@ Starting with NativeScript CLI 1.1.0, you can develop or use plugins in your Nat
 A NativeScript plugin is any npm package, published or not, that exposes a native API via JavaScript and consists of the following elements. The plugin must have the directory structure, described in the [Directory Structure](#directory-structure) section.
 
 ## Create a Plugin
+
 
 If the NativeScript framework does not expose a native API that you need, you can develop a plugin which exposes the required functionality. When you develop a plugin, keep in mind the following requirements.
 
