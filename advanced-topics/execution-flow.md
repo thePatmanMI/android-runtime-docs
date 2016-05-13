@@ -9,7 +9,7 @@ position: 1
 
 Android Runtime 
 ---
-_Disclaimer: This article assumes that you are familiar with the core concepts of [NativeScript](http://docs.nativescript.org/) and the [NativeScript Android Runtime](../overview.md)_
+_Disclaimer: This author of this article assumes that you are familiar with the core concepts of [NativeScript](http://docs.nativescript.org/) and the [NativeScript Android Runtime](../overview.md)_
 
 The Android Runtime is built on top of **[Google's V8 JavaScript Virtual Machine](#googles-v8)**. Pre-generated **[Metadata](#metadata-generator)** is embedded in the resulting application and as a result we get very efficient native access, while the **[Binding Generator](#binding-generator)** component takes care of the creation of custom Java classes build-time to extend Java/Android class functionality or serve as proxy.
  
