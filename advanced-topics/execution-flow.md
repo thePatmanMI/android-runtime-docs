@@ -9,14 +9,14 @@ position: 1
 
 Android Runtime 
 ---
-_Disclaimer: This author of this article assumes that you are familiar with the core concepts of [NativeScript](http://docs.nativescript.org/) and the [NativeScript Android Runtime](../overview.md)_
+_Disclaimer: The author of this article assumes that you are familiar with the core concepts of [NativeScript](http://docs.nativescript.org/) and the [NativeScript Android Runtime](../overview.md)_
 
 The Android Runtime is built on top of **[Google's V8 JavaScript Virtual Machine](#googles-v8)**. Pre-generated **[Metadata](#metadata-generator)** is embedded in the resulting application and as a result we get very efficient native access, while the **[Binding Generator](#binding-generator)** component takes care of the creation of custom Java classes build-time to extend Java/Android class functionality or serve as proxy.
  
 ---
  
 ## Google's V8
- V8 is the JavaScript Engine which compiles and executes the JavaScript code. It takes advantage of the [Just-In-Time technique](http://whatis.techtarget.com/definition/just-in-time-compiler-JIT) to process JavaScript code with great efficiency. [Read more.](https://developers.google.com/v8/)
+ V8 is the JavaScript Engine which compiles and executes the JavaScript code. It takes advantage of the [Just-In-Time Compilation technique](http://whatis.techtarget.com/definition/just-in-time-compiler-JIT) to process JavaScript code with great efficiency. [Read more.](https://developers.google.com/v8/)
  
 ## JNI
  JNI is the **Java Native Interface** that provides means for Java code to interact with native code. Put shortly - it allows a Java program to invoke functions in another C/C++ program and vice versa. In the context of a NativeScript application JNI is the communicational layer between the V8 JavaScript Engine and the platform - Java/Android code. [Read more.](http://developer.android.com/training/articles/perf-jni.html)
@@ -90,4 +90,3 @@ Triggering an event in Android will always be handled by the Dalvik Virtual Mach
 Execution Flow illustration:
 ![How a NativeScript program's execution flow looks like on Android devices](app_process.png)
 
----
