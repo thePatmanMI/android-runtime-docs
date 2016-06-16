@@ -32,3 +32,4 @@ The repository contains the raw content files. To see the HTML representation of
 	* [Advanced Debugging NativeScript for Android](./debug/debug-eclipse.md)
 * Advanced Topics
 	* [Execution Flow](./getting-started/execution-flow.md)
+	* [V8 Heap Snapshots](./advanced-topics/V8-heap-snapshots.md)
