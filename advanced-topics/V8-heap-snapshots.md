@@ -37,7 +37,7 @@ app/snapshots
     └── snapshot.blob
 ```
 
-These files can be as much as 10MB of size each but are nicely compressed in the APK package. If they are placed in the `platform/assets/app/snapshots` folder, only the heap snapshot file for the currently running CPU architecture would be extracted at startup. Heap snapshots are created with the [mksnapshot tool](https://github.com/v8/v8/blob/4.7.80/src/snapshot/mksnapshot.cc) included in the V8 repository.
+These files can be as much as 10MB of size each but are nicely compressed in the APK package. If they are placed in the `platform/assets/snapshots` folder, only the heap snapshot file for the currently running CPU architecture would be extracted at startup. Heap snapshots are created with the [mksnapshot tool](https://github.com/v8/v8/blob/4.7.80/src/snapshot/mksnapshot.cc) included in the V8 repository.
 
 ## NativeScript Android Snapshot Plugin
 
