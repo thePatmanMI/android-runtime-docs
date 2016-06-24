@@ -187,8 +187,8 @@ The core modules ship with a default `android.app.Activity` implementation, whic
             android:configChanges="keyboardHidden|orientation|screenSize">
     ```
 
-## See Also
-* 
-
 ## Limitations
-Currently the `extend` routine supported by the Android Runtime does not allow you to implement additional interfaces on the extended objects through JavaScript. This is needed in cases where native Android SDKs require the `application` (or other) object to implement an additional interface - such as the [Lock for Android (Auth0)](https://auth0.com/docs/libraries/lock-android) library. However, we already have work in progress that will enable this scenario - it is expected to land with the 2.2 release.
+Currently the `extend` routine supported by the Android Runtime does not allow you to implement additional interfaces on the extended objects through JavaScript. This is needed in cases where native Android SDKs require the `application` (or other) object to implement an additional interface - such as the [Lock for Android (Auth0)](https://auth0.com/docs/libraries/lock-android) library. However, we already have work in progress that will enable this scenario.
+
+## See Also
+* [How Extend Works]("../generator/extend-class-interface.md")
