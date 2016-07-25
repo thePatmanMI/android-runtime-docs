@@ -62,8 +62,65 @@ button.setOnClickListener(new android.view.View.OnClickListener({
 }));
 ```
 
-# Remarks
-The current NativeScript runtime allows implementing a single interface at once. This is a subject of further rewrite and may change in future releases.
+## Implementing multiple interfaces in NativeScript 
+
+Suppose you have the following classes:
+
+```java
+public interface Printer {
+	void print(String content);
+	void print(String content, int offset);
+}
+
+public interface Copier {
+	String copy(String content);
+}
+
+public interface Writer {
+	void write(Object[] arr);
+	void writeLine(Object[] arr)
+}
+```
+
+Implementing the interfaces is as easy in Java as writing:
+
+```java
+public class MyVersatileCopywriter implements Printer, Copier, Writer {
+	public void print(String content) {
+		...
+	}
+
+	public void print(String content, int offset) { ... }
+
+	...
+}
+```
+
+That can be achieved in NativeScript by extending any valid Java object and declaring an **interfaces** array in the implementation:
+
+Javascript - attach `interfaces` array to implementation object of the extend call
+
+```javascript
+var MyVersatileCopyWriter = java.lang.Object.extend({
+	interfaces: [com.a.b.Printer, com.a.b.Copier, com.a.b.Writer],
+	print: function() { ... },
+	copy: function() { ... },
+	write: function() { ... },
+	writeLine: function() { ... }
+});
+```
+
+Typescript - note how you **decorate** the class instead of declaring a static interface field 
+
+```typescript
+@Interfaces([com.a.bPrinter, com.a.b.Copier, com.a.b.Writer])
+class MyVersatileCopyWriter extends java.lang.Object {
+	print() { ... }
+	copy() { ... }
+	write() { ... }
+	writeLine() { ... }
+}
+```
 
 # See Also
 * [How Extend Works](./how-extend-works.md)

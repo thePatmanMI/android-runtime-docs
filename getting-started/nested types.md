@@ -6,7 +6,7 @@ position: 4
 ---
 
 # Overview
-Both Java and JavaScript are high-level languages meaning that they both provide strong abstraction from the computer details. It is relatively straightforward to express a high-level language to low-level one (for example to translate Java to Assembly). However, there are technical difficulties when it comes to translating one high-level concept to another one. Such difficulties are largely known as *impedance mismatch*. This article explains how the deal with the impedance mismatch when it comes to working with Java inner and nested types.
+Both Java and JavaScript are high-level languages meaning that they both provide strong abstraction from the computer details. It is relatively straightforward to express a high-level language to low-level one (for example to translate Java to Assembly). However, there are technical difficulties when it comes to translating one high-level concept to another. Such difficulties are largely known as *impedance mismatch*. This article explains how the deal with the impedance mismatch when it comes to working with Java inner and nested types.
 
 # Java Nested Types
 Here is a short example that summarizes the relation between Java nested and inner types.
@@ -21,7 +21,7 @@ public class Outer {
     }
 }
 ```
-In short, an instance of inner types hold a reference to an instance of the outer type. You can find more information in the Java language specification (http://docs.oracle.com/javase/specs/jls/se8/html/). Here is an example how to instantiate objects from the example above.
+In short, an instance of inner types hold a reference to an instance of the outer type. You can find more information in the Java language specification (http://docs.oracle.com/javase/specs/jls/se8/html/). Here is an example (Java) how to instantiate objects from the example above.
 
 ```Java
 Outer outer = new Outer();
@@ -36,9 +36,8 @@ NativeScript for Android supports both nested and inner types. Here is the trans
 
 ```JavaScript
 var outer = new Outer();
-var inner1 = new outer.Inner();
 
-var inner2 = new new Outer().Inner();
+var inner1 = new Outer.Inner(outer);
 
 var nested =  new Outer.Nested();
 ```
