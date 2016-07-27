@@ -2,7 +2,7 @@
 nav-title: "Accessing APIs"
 title: "Accessing APIs"
 description: "NativeScript Android Runtime Metadata API Access"
-position: 2
+position: 1
 ---
 
 # Packages
@@ -55,4 +55,3 @@ var pathSeparator = java.io.File.pathSeparator;
 
 # See Also
 * [Execution Flow](../advanced-topics/execution-flow.md)
-* [Generating Metadata](./generator.md)
