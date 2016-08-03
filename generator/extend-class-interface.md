@@ -62,8 +62,93 @@ button.setOnClickListener(new android.view.View.OnClickListener({
 }));
 ```
 
-# Remarks
-The current NativeScript runtime allows implementing a single interface at once. This is a subject of further rewrite and may change in future releases.
+## Implementing multiple interfaces in NativeScript 
+
+Suppose you have the following interfaces in Java:
+
+```java
+public interface Printer {
+	void print(String content);
+	void print(String content, int offset);
+}
+
+public interface Copier {
+	String copy(String content);
+}
+
+public interface Writer {
+	void write(Object[] arr);
+	void writeLine(Object[] arr)
+}
+```
+
+Implementing the interfaces is as easy in Java as writing:
+
+```java
+public class MyVersatileCopywriter implements Printer, Copier, Writer {
+	public void print(String content) {	...	}
+
+	public void print(String content, int offset) { ... }
+
+	public String copy(String content) { ... }
+
+	public void write(Object[] arr) { ... }
+
+	public void writeLine(Object[] arr) { ... }
+}
+```
+
+The same result can be achieved in NativeScript by extending(./how-extend-works.md) any valid object that inherits [Java Object](https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html), and declaring an **interfaces** array in the implementation as shown below:
+
+Using Javascript syntax - attach `interfaces` array to implementation object of the extend call
+
+```javascript
+var MyVersatileCopyWriter = java.lang.Object.extend({
+	interfaces: [com.a.b.Printer, com.a.b.Copier, com.a.b.Writer], /* the interfaces that will be inherited by the resulting class */
+	print: function() { ... }, /* implementing the 'print' methods from Printer */
+	copy: function() { ... }, /* implementing the 'copy' method from Copier */
+	write: function() { ... }, /* implementing the 'write' method from Writer */
+	writeLine: function() { ... }, /* implementing the 'writeLine' method from Writer */
+	toString: function() { ... } /* override `java.lang.Object's` `toString */
+});
+```
+
+Using Typescript syntax - apply a **decorator** to the extended class (note `@Interfaces([...]`))
+
+```typescript
+@Interfaces([com.a.b.Printer, com.a.b.Copier, com.a.b.Writer]) /* the interfaces that will be inherited by the resulting MyVersatileCopyWriter class */
+class MyVersatileCopyWriter extends java.lang.Object { 
+	print() { ... }
+	copy() { ... }
+	write() { ... }
+	writeLine() { ... }
+}
+```
+
+### Notes
+> Java method overloads are handled by the developer by explicitly checking the `arguments` count of the invoked function
+```javascript
+var MyVersatileCopyWriter = ...extend({
+	...
+	print: function() {
+		var content = "";
+		var offset = 0;
+
+		if(arguments.length == 2) {
+			offset = arguments[1];
+		}
+
+		content = arguments[0];
+
+		// do stuff
+	}
+	...
+})
+```
+
+> When implementing Java interfaces in NativeScript it is necessary to provide implementation (declare the methods - `print`, `copy`, `write`, `writeLine`) for **every** method present in the interfaces, otherwise compilation will fail. If you do not want to fully implement an interface you need to declare empty functions. Functions with empty bodies are considered valid method implementations (`print: function() {}`).
+
+> In addition to implementing interface methods, you can override methods of the extended class, and also declare your own methods that the new class should have.
 
 # See Also
 * [How Extend Works](./how-extend-works.md)
