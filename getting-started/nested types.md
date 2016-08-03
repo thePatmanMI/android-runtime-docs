@@ -21,7 +21,7 @@ public class Outer {
     }
 }
 ```
-In short, an instance of inner types hold a reference to an instance of the outer type. You can find more information in the Java language specification (http://docs.oracle.com/javase/specs/jls/se8/html/). Here is an example (Java) how to instantiate objects from the example above.
+In short, an instance of inner types hold a reference to an instance of the outer type. You can find more information in the Java language specification (http://docs.oracle.com/javase/specs/jls/se8/html/). Here is a Java example how to instantiate the objects:
 
 ```Java
 Outer outer = new Outer();
@@ -32,12 +32,14 @@ Outer.Inner inner2 = new Outer().new Inner();
 Outer.Nested nested = new Outer.Nested()
 ```
 
-NativeScript for Android supports both nested and inner types. Here is the translated example from above.
+NativeScript for Android supports both nested and inner types. Here is the translated example from above:
 
 ```JavaScript
 var outer = new Outer();
 
-var inner1 = new Outer.Inner(outer);
+var inner1 = new outer.Inner();		
+  		  
+var inner2 = new new Outer().Inner();
 
 var nested =  new Outer.Nested();
 ```
