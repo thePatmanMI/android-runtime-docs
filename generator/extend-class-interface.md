@@ -127,6 +127,7 @@ class MyVersatileCopyWriter extends java.lang.Object {
 
 ### Notes
 > Java method overloads are handled by the developer by explicitly checking the `arguments` count of the invoked function
+
 ```javascript
 var MyVersatileCopyWriter = ...extend({
 	...
@@ -146,7 +147,7 @@ var MyVersatileCopyWriter = ...extend({
 })
 ```
 
-> When implementing Java interfaces in NativeScript it is necessary to provide implementation (declare the methods - `print`, `copy`, `write`, `writeLine`) for **every** method present in the interfaces, otherwise compilation will fail. If you do not want to fully implement an interface you need to declare empty functions. Functions with empty bodies are considered valid method implementations (`print: function() {}`).
+> When implementing Java interfaces in NativeScript, it is necessary to provide implementation (declare the methods - `print`, `copy`, `write`, `writeLine`) for **every** method present in the interfaces, otherwise compilation will fail. If you do not want to fully implement an interface you need to declare empty functions. Functions with empty bodies are considered valid method implementations (`print: function() {}`).
 
 > In addition to implementing interface methods, you can override methods of the extended class, and also declare your own methods that the new class should have.
 
