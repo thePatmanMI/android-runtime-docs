@@ -125,6 +125,11 @@ class MyVersatileCopyWriter extends java.lang.Object {
 }
 ```
 
+## Limitations
+* Implementing two interfaces with the same method signature will generate just 1 method. It is the implementor's responsibility to define how the method will behave for both interfaces
+* Implementing two interfaces with the same *method name*, *parameter number*, but **different return type** (`void a()` vs `boolean a()`) will result in a compilation error
+
+
 ### Notes
 > Java method overloads are handled by the developer by explicitly checking the `arguments` count of the invoked function
 
@@ -149,7 +154,10 @@ var MyVersatileCopyWriter = ...extend({
 
 > When implementing Java interfaces in NativeScript, it is necessary to provide implementation (declare the methods - `print`, `copy`, `write`, `writeLine`) for **every** method present in the interfaces, otherwise compilation will fail. If you do not want to fully implement an interface you need to declare empty functions. Functions with empty bodies are considered valid method implementations (`print: function() {}`).
 
+
+
 > In addition to implementing interface methods, you can override methods of the extended class, and also declare your own methods that the new class should have.
+
 
 # See Also
 * [How Extend Works](./how-extend-works.md)
