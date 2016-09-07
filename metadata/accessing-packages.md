@@ -22,7 +22,7 @@ var androidPkg = android;
 var androidViewPkg = android.view;
 ```
 
-> **Note:** You may not use APIs that are not present in the metadata. By default the Android Runtime comes with prebuilt metadata for Android [API level 17](http://developer.android.com/about/versions/android-4.2.html), which is also the minimum required SDK. If needed, you may use the generator tool to build metadata against higher API level.
+> **Note:** You may not use APIs that are not present in the metadata. By default the Android Runtime comes with prebuilt metadata for Android [API level 23](https://developer.android.com/about/versions/marshmallow/index.html).
 
 # Proxies
 The JavaScript objects that lie behind the Android APIs are called *Proxies*. There are two types of proxies:
