@@ -18,6 +18,7 @@ Starting with NativeScript CLI 1.1.0, you can develop or use plugins in your Nat
     * [Directory Structure](#directory-structure)
     * [Android plugin elements](#android-plugin-elements)
     * [Include.gradle Specification](#includegradle-specification)
+    * [Native Android plugin using V8 API](#using-v8)
 * [Rules of thumb](#rules-of-thumb)
     * [What do I use?](#what-do-i-use)
 * [Plugin migration](#plugin-migration)
@@ -80,6 +81,25 @@ Every NativeScript plugin, which contains native Android dependencies, should al
 //optional elements
 dependencies {
     compile "groupName:pluginName:ver"
+}
+```
+
+### Native Android plugin using V8 API
+
+If for any reason you want to use V8 API in your plugin, you will need to specify that explicitly in the plugin's `package.json`, so that the respective symbols be exposed for use when the plugin is installed inside a NativeScript application.
+```javascript
+{
+    "name": "plugin-name",
+    "version": "0.1.0",
+    ...
+    "nativescript": {
+        "platforms": {
+            ...
+        },
+        "useV8symbols": true /* exposes V8 API for plugin */
+    },
+    ...
+    // omitted for brevity
 }
 ```
 
