@@ -34,8 +34,7 @@ The following steps are needed to create custom native `android.app.Application`
         onCreate: function() {
             superProto.onCreate.call(this);
 
-            // initialize the modules with the custom application object
-            application.android.init(this);
+            // At this point modules have already been initialized
 
             // Enter custom initialization code here
         },
@@ -188,4 +187,4 @@ The core modules ship with a default `android.app.Activity` implementation, whic
     ```
 
 ## See Also
-* [How Extend Works]("../generator/extend-class-interface.md")
+* [How Extend Works](../generator/extend-class-interface.md)
