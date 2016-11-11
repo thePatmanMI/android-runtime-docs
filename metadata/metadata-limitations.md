@@ -22,7 +22,7 @@ In API level 21 a method called getLetterSpacing was added. What that means is, 
 
 ####Problem 1: Building with lower API level.
 
-If an application is build with --compileSdk flag pointing to a lower Android API level, for example 19, the generated metadata will be also for API level 19. Now if the application developer wants to call a newer API introduced in anadroid API level 21, he can't because the metadata has only the information about API level <= 19.
+If an application is build with --compileSdk flag pointing to a lower Android API level, for example 19, the generated metadata will be also for API level 19. Now if the application developer wants to call a newer API introduced in Android API level 21, he can't because the metadata has only the information about API level <= 19.
 
 This problem is easily solved by not specifying a --compileSdk flag and using the default behavior.
 
